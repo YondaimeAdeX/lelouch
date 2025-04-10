@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbOkulModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblDers0">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dersAdi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblOgrenciler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ogAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="ogSinifi" Type="nvarchar" MaxLength="50" />
+          <Property Name="ogNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="ogTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="ogDurumu" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblSiniflar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sinifAdi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="dbOkulModelStoreContainer">
+          <EntitySet Name="tblDers0" EntityType="Self.tblDers0" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOgrenciler" EntityType="Self.tblOgrenciler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSiniflar" EntityType="Self.tblSiniflar" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbOkulModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblDers0">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dersAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblOgrenciler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ogAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ogSinifi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ogNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ogTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ogDurumu" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblSiniflar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sinifAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="dbOkulEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblDers0" EntityType="Self.tblDers0" />
+          <EntitySet Name="tblOgrenciler" EntityType="Self.tblOgrenciler" />
+          <EntitySet Name="tblSiniflar" EntityType="Self.tblSiniflar" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbOkulModelStoreContainer" CdmEntityContainer="dbOkulEntities2">
+          <EntitySetMapping Name="tblDers0">
+            <EntityTypeMapping TypeName="dbOkulModel.tblDers0">
+              <MappingFragment StoreEntitySet="tblDers0">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="dersAdi" ColumnName="dersAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOgrenciler">
+            <EntityTypeMapping TypeName="dbOkulModel.tblOgrenciler">
+              <MappingFragment StoreEntitySet="tblOgrenciler">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ogAdi" ColumnName="ogAdi" />
+                <ScalarProperty Name="ogSinifi" ColumnName="ogSinifi" />
+                <ScalarProperty Name="ogNo" ColumnName="ogNo" />
+                <ScalarProperty Name="ogTel" ColumnName="ogTel" />
+                <ScalarProperty Name="ogDurumu" ColumnName="ogDurumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSiniflar">
+            <EntityTypeMapping TypeName="dbOkulModel.tblSiniflar">
+              <MappingFragment StoreEntitySet="tblSiniflar">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sinifAdi" ColumnName="sinifAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
